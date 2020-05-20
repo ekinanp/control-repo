@@ -29,3 +29,9 @@ node default {
   # Example:
   #   class { 'my_class': }
 }
+
+# Include the demo class so the node's trusted external data
+# can be printed
+include test::trusted
+
+include servicenow_cmdb_integration::classification

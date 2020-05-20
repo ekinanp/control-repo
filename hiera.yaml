@@ -5,8 +5,7 @@ defaults:
   datadir: "data"
 
 hierarchy:
-  - name: "Yaml backend"
-    data_hash: yaml_data
-    paths:
-      - "nodes/%{trusted.certname}.yaml"
-      - "common.yaml"
+  - name: "ServiceNow Hiera data"
+    data_hash: servicenow_cmdb_integration::getvar
+    options:
+      var: trusted.external.servicenow.hiera_data
